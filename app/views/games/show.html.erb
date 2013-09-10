@@ -1,0 +1,83 @@
+<h1>Game #<%= @game.id %></h1>
+<%= @game.move.to_i%>
+
+<div class="game">
+
+  <%= form_tag game_url(@game), class: "form-inline inputbox", method: 'patch' do %>
+    <div class = "spotonboard pull-left">
+      <% if @game.s1.present? %>
+        <%= @game.s1%>
+        <%else%>
+        <%= text_field_tag :s1  %>
+      <%end%>
+    </div>
+    <div class = "spotonboard pull-left">
+      <% if @game.s2.present? %>
+        <%= @game.s2%>
+        <%else%>
+        <%= text_field_tag :s2  %>
+      <%end%>
+    </div>
+    <div class = "spotonboard pull-right">
+      <% if @game.s3.present? %>
+        <%= @game.s3%>
+        <%else%>
+        <%= text_field_tag :s3  %>
+      <%end%>
+    </div>
+
+    <div class = "spotonboard pull-left">
+      <% if @game.s4.present? %>
+        <%= @game.s4 %>
+        <%else%>
+        <%= text_field_tag :s4  %>
+      <%end%>
+    </div>
+    <div class = "spotonboard pull-left">
+      <% if @game.s5.present? %>
+        <%= @game.s5%>
+        <%else%>
+        <%= text_field_tag :s5  %>
+      <%end%>
+    </div>
+    <div class = "spotonboard pull-right">
+      <% if @game.s6.present? %>
+        <%= @game.s6%>
+        <%else%>
+        <%= text_field_tag :s6  %>
+      <%end%>
+    </div>
+
+    <div class = "spotonboard pull-left">
+      <% if @game.s7.present? %>
+        <%= @game.s7%>
+        <%else%>
+        <%= text_field_tag :s7  %>
+      <%end%>
+    </div>
+    <div class = "spotonboard pull-left">
+      <% if @game.s8.present? %>
+        <%= @game.s8%>
+        <%else%>
+        <%= text_field_tag :s8  %>
+      <%end%>
+    </div>
+    <div class = "spotonboard pull-right">
+      <% if @game.s9.present? %>
+        <%= @game.s9%>
+        <%else%>
+        <%= text_field_tag :s9  %>
+      <%end%>
+    </div>
+
+
+
+  </br>
+</br>
+    <%= submit_tag "Submit Move", class:"btn btn-success" %>
+  <% end %>
+
+
+</div>
+<%= link_to 'Restart', reset_url(@game), method: 'patch' %>
+

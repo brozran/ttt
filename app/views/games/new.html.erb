@@ -1,0 +1,56 @@
+<h1>New Game</h1>
+
+
+<%= form_tag(games_url, method: 'post') do %>
+
+
+  <div>
+    <%= label_tag :s1 %><br />
+    <%= number_field_tag :s1 %>
+  </div>
+
+  <div>
+    <%= label_tag :s2 %><br />
+    <%= number_field_tag :s2 %>
+  </div>
+
+  <div>
+    <%= label_tag :s3 %><br />
+    <%= number_field_tag :s3 %>
+  </div>
+
+  <div>
+    <%= label_tag :s4 %><br />
+    <%= number_field_tag :s4 %>
+  </div>
+
+  <div>
+    <%= label_tag :s5 %><br />
+    <%= number_field_tag :s5 %>
+  </div>
+
+  <div>
+    <%= label_tag :s6 %><br />
+    <%= number_field_tag :s6 %>
+  </div>
+
+  <div>
+    <%= label_tag :s7 %><br />
+    <%= number_field_tag :s7 %>
+  </div>
+
+  <div>
+    <%= label_tag :s8 %><br />
+    <%= number_field_tag :s8 %>
+  </div>
+
+  <div>
+    <%= label_tag :s9 %><br />
+    <%= number_field_tag :s9 %>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Create Game" %>
+  </div>
+<% end %>

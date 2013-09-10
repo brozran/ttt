@@ -1,0 +1,56 @@
+<h1>Editing Game #<%= @game.id %></h1>
+
+
+<%= form_tag(game_url(@game), method: 'patch') do %>
+
+  <div>
+    <%= label_tag :s1 %><br />
+    <%= number_field_tag :s1, @game.s1 %>
+  </div>
+
+  <div>
+    <%= label_tag :s2 %><br />
+    <%= number_field_tag :s2, @game.s2 %>
+  </div>
+
+  <div>
+    <%= label_tag :s3 %><br />
+    <%= number_field_tag :s3, @game.s3 %>
+  </div>
+
+  <div>
+    <%= label_tag :s4 %><br />
+    <%= number_field_tag :s4, @game.s4 %>
+  </div>
+
+  <div>
+    <%= label_tag :s5 %><br />
+    <%= number_field_tag :s5, @game.s5 %>
+  </div>
+
+  <div>
+    <%= label_tag :s6 %><br />
+    <%= number_field_tag :s6, @game.s6 %>
+  </div>
+
+  <div>
+    <%= label_tag :s7 %><br />
+    <%= number_field_tag :s7, @game.s7 %>
+  </div>
+
+  <div>
+    <%= label_tag :s8 %><br />
+    <%= number_field_tag :s8, @game.s8 %>
+  </div>
+
+  <div>
+    <%= label_tag :s9 %><br />
+    <%= number_field_tag :s9, @game.s9 %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Game" %>
+  </div>
+
+<% end %>
