@@ -110,7 +110,7 @@ class GamesController < ApplicationController
         @game.s2 = "o"
       end
       if @array == ["x", "", "", "", "o", "","","x",""]
-        @game.s3 = "o"
+        @game.s7 = "o"
       end
       if @array == ["x", "", "", "", "o", "","","","x"]
         @game.s2 = "o"
@@ -133,7 +133,7 @@ class GamesController < ApplicationController
         @game.s1 = "o"
       end
       if @array == ["", "x", "", "", "o", "","","","x"]
-        @game.s1 = "o"
+        @game.s3 = "o"
       end
 
       # user went top right first
@@ -205,7 +205,7 @@ class GamesController < ApplicationController
         @game.s3 = "o"
       end
       if @array == ["o", "x", "", "", "x", "","","o","x"]
-        @game.s3 = "o"
+        @game.s7 = "o"
       end
       # user went in middle first top right second
       if @array == ["o", "x", "x", "", "x", "","o","",""]
@@ -242,7 +242,7 @@ class GamesController < ApplicationController
       end
       # user went in middle first middle right second
       if @array == ["o", "", "", "o", "x", "x","","",""]
-        @game.s6 = "7"
+        @game.s6 = "o"
       end
       if @array == ["o", "x", "", "o", "x", "x","","",""]
         @game.s7 = "o"
@@ -264,22 +264,161 @@ class GamesController < ApplicationController
         # GAME OVER
       end
       # user went in middle first bottom left second
-      # LEFT OFF HERE
-      if @array == ["o", "x", "x", "", "x", "","","o",""]
+      if @array == ["o", "x", "o", "", "x", "","x","",""]
+        @game.s8 = "o"
+      end
+      if @array == ["o", "", "o", "x", "x", "","x","",""]
+        @game.s2 = "o"
+        # GAME OVER
+      end
+      if @array == ["o", "", "o", "", "x", "x","x","",""]
+        @game.s2 = "o"
+        # GAME OVER
+      end
+      if @array == ["o", "", "o", "", "x", "","x","x",""]
+        @game.s2 = "o"
+        # GAME OVER
+      end
+      if @array == ["o", "", "o", "", "x", "","x","","x"]
+        @game.s2 = "o"
+        # GAME OVER
+      end
+      # user went in middle first bottom middle second
+      if @array == ["o", "o", "x", "", "x", "","","x",""]
         @game.s7 = "o"
       end
-      if @array == ["o", "x", "", "x", "x", "","","o",""]
-        @game.s6 = "o"
+      if @array == ["o", "o", "", "x", "x", "","","x",""]
+        @game.s3 = "o"
+        # GAME OVER
       end
-      if @array == ["o", "x", "", "", "x", "x","","o",""]
+      if @array == ["o", "o", "", "", "x", "x","","x",""]
+        @game.s3 = "o"
+        # GAME OVER
+      end
+      if @array == ["o", "o", "", "", "x", "","x","x",""]
+        @game.s3 = "o"
+        # GAME OVER
+      end
+      if @array == ["o", "o", "", "", "x", "","","x","x"]
+        @game.s3 = "o"
+        # GAME OVER
+      end
+      # user went in middle first bottom right second
+      if @array == ["o", "", "o", "x", "x", "","","","x"]
+        @game.s2 = "o"
+        # GAME OVER
+      end
+      if @array == ["o", "", "o", "", "x", "x","","","x"]
+        @game.s2 = "o"
+        # GAME OVER
+      end
+      if @array == ["o", "", "o", "", "x", "","x","","x"]
+        @game.s2 = "o"
+        # GAME OVER
+      end
+      if @array == ["o", "", "o", "", "x", "","","x","x"]
+        @game.s2 = "o"
+        # GAME OVER
+      end
+      if @array == ["o", "x", "o", "", "x", "","","","x"]
+        @game.s8 = "o"
+      end
+        # user went in top left first top middle second
+      if @array == ["x", "x", "o", "x", "o", "","","",""] || @array == ["x", "x", "o", "", "o", "x","","",""] || @array == ["x", "x", "o", "", "o", "","","x",""] || @array == ["x", "x", "o", "", "o", "","","","x"]
+        @game.s7 = "o"
+        # GAME OVER
+      elsif @array == ["x", "x", "o", "", "o", "","x","",""]
         @game.s4 = "o"
       end
-      if @array == ["o", "x", "", "", "x", "","x","o",""]
+        # user went in top left first top right second
+      if @array == ["x", "o", "x", "x", "o", "","","",""] || @array == ["x", "o", "x", "", "o", "x","","",""] || @array == ["x", "o", "x", "", "o", "","x","",""] || @array == ["x", "o", "x", "", "o", "","","","x"]
+        @game.s8 = "o"
+        # GAME OVER
+      elsif @array == ["x", "o", "x", "", "o", "","","x",""]
+        @game.s4 = "o"
+      end
+        # user went in top left first middle left second
+      if @array == ["x", "x", "", "x", "o", "","o","",""] || @array == ["x", "", "", "x", "o", "x","o","",""] || @array == ["x", "", "", "x", "o", "","o","x",""] || @array == ["x", "", "", "x", "o", "","o","","x"]
+        @game.s3 = "o"
+        # GAME OVER
+      elsif @array == ["x", "", "x", "x", "o", "","o","",""]
+        @game.s2 = "o"
+      end
+        # user went in top left first middle right second
+      if @array == ["x", "x", "o", "", "o", "x","","",""] || @array == ["x", "", "o", "x", "o", "x","","",""] || @array == ["x", "", "o", "", "o", "x","","x",""] || @array == ["x", "", "o", "", "o", "x","","","x"]
+        @game.s7 = "o"
+        # GAME OVER
+      elsif @array == ["x", "", "o", "", "o", "x","x","",""]
+        @game.s4 = "o"
+      end
+        # user went in top left first bottom left second
+      if @array == ["x", "o", "x", "", "o", "","x","",""] || @array == ["x", "o", "", "x", "o", "","x","",""] || @array == ["x", "o", "", "", "o", "x","x","",""] || @array == ["x", "o", "", "", "o", "","x","","x"]
+        @game.s8 = "o"
+        # GAME OVER
+      elsif @array == ["x", "o", "", "", "o", "","x","x",""]
+        @game.s9 = "o"
+      end
+        # user went in top left first bottom middle second
+      if @array == ["x", "x", "", "", "o", "","o","x",""] || @array == ["x", "", "", "x", "o", "","o","x",""] || @array == ["x", "", "", "", "o", "x","o","x",""] || @array == ["x", "", "", "", "o", "","o","x","x"]
+        @game.s3 = "o"
+        # GAME OVER
+      elsif @array == ["x", "", "x", "", "o", "","o","x",""]
+        @game.s2 = "o"
+      end
+        # user went in top left first bottom right second
+      if @array == ["x", "o", "x", "", "o", "","","","x"] || @array == ["x", "o", "", "x", "o", "","","","x"] || @array == ["x", "o", "", "", "o", "x","","","x"] || @array == ["x", "o", "", "", "o", "","x","","x"]
+        @game.s8 = "o"
+        # GAME OVER
+      elsif @array == ["x", "o", "", "", "o", "","","x","x"]
+        @game.s7 = "o"
+      end
+        # user went in top middle first top right second
+      if @array == ["o", "x", "x", "x", "o", "","","",""] || @array == ["o", "x", "x", "", "o", "x","","",""] || @array == ["o", "x", "x", "", "o", "","x","",""] || @array == ["o", "x", "x", "", "o", "","","x",""]
+        @game.s9 = "o"
+        # GAME OVER
+      elsif @array == ["o", "x", "x", "", "o", "","","","x"]
+        @game.s6 = "o"
+      end
+        # user went in top middle first middle left second
+      if @array == ["o", "x", "x", "x", "o", "","","",""] || @array == ["o", "x", "", "x", "o", "x","","",""] || @array == ["o", "x", "", "x", "o", "","x","",""] || @array == ["o", "x", "", "x", "o", "","","x",""]
+        @game.s9 = "o"
+        # GAME OVER
+      elsif @array == ["o", "x", "", "x", "o", "","","","x"]
         @game.s3 = "o"
       end
-      if @array == ["o", "x", "", "", "x", "","","o","x"]
-        @game.s3 = "o"
+        # user went in top middle first middle right second
+      if @array == ["x", "x", "o", "", "o", "x","","",""] || @array == ["", "x", "o", "x", "o", "x","","",""] || @array == ["", "x", "o", "", "o", "x","","x",""] || @array == ["", "x", "o", "", "o", "x","","","x"]
+        @game.s7 = "o"
+        # GAME OVER
+      elsif @array == ["", "x", "o", "", "o", "x","x","",""]
+        @game.s1 = "o"
       end
+        # user went in top middle first bottom left second
+      if @array == ["o", "x", "x", "", "o", "","x","",""] || @array == ["o", "x", "", "x", "o", "","x","",""] || @array == ["o", "x", "", "", "o", "x","x","",""] || @array == ["o", "x", "", "", "o", "","x","x",""]
+        @game.s9 = "o"
+        # GAME OVER
+      elsif @array == ["o", "x", "", "", "o", "","x","","x"]
+        @game.s4 = "o"
+      end
+        # user went in top middle first bottom middle second
+      if @array == ["o", "x", "x", "", "o", "","","x",""] || @array == ["o", "x", "", "x", "o", "","","x",""] || @array == ["o", "x", "", "", "o", "x","","x",""] || @array == ["o", "x", "", "", "o", "","x","x",""]
+        @game.s9 = "o"
+        # GAME OVER
+      elsif @array == ["o", "x", "", "", "o", "","","x","x"]
+        @game.s7 = "o"
+      end
+        # user went in top middle first bottom right second
+      if @array == ["x", "x", "o", "", "o", "","","","x"] || @array == ["", "x", "o", "x", "o", "","","","x"] || @array == ["", "x", "o", "", "o", "x","","","x"] || @array == ["", "x", "o", "", "o", "","","x","x"]
+        @game.s7 = "o"
+        # GAME OVER
+      elsif @array == ["", "x", "o", "", "o", "","x","","x"]
+        @game.s8 = "o"
+      end
+
+
+
+# blank array
+# ["", "", "", "", "", "","","",""]
 
 
     end
