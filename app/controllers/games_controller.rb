@@ -930,6 +930,8 @@ end
 
   def index
     @games = Game.all
+    @lost = Game.where(:gamestatus => "lost").count
+    @tie = Game.where(:gamestatus => "tie").count
   end
 
   def show

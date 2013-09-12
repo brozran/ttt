@@ -1,5 +1,6 @@
 Ttt2::Application.routes.draw do
   # Routes for the Game resource:
+   root "games#index"
   # CREATE
   get '/games/new', controller: 'games', action: 'new', as: 'new_game'
   post '/games', controller: 'games', action: 'create'
@@ -10,7 +11,6 @@ Ttt2::Application.routes.draw do
   patch '/games/reset/:id', controller: 'games', action: 'reset', as: 'reset'
 
   # UPDATE
-  get '/games/:id/edit', controller: 'games', action: 'edit', as: 'edit_game'
   patch '/games/:id', controller: 'games', action: 'update'
 
   # DELETE

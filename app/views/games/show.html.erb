@@ -2,6 +2,7 @@
 
 
 <div class="game">
+<h5>Place an x where you'd like to move and hit submit</h5>
 
   <%= form_tag game_url(@game), class: "form-inline inputbox", method: 'patch' do %>
     <div class = "spotonboard pull-left">
@@ -79,7 +80,8 @@
 
 
 </div>
-  <%= link_to 'Restart', reset_url(@game), method: 'patch' %>
+  <%= link_to 'Restart', reset_url(@game), class:"btn btn-danger", method: 'patch' %>
+  <%= link_to 'Home', root_url, class:"btn btn-primary"%>
 </br>
 
 <h1><%= @game.gamestatus %></h1>

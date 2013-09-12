@@ -1,44 +1,21 @@
 <h1>Games</h1>
 
-<p><%= link_to 'Play a New Game', new_game_url %></p>
+<p><%= link_to 'Play a New Game', new_game_url, class: "btn btn-success btn-small" %></p>
+<h5>Your record is 0-<%=@lost%>-<%=@tie%></h5></br>
 
-<table>
-  <thead>
-    <tr>
-      <th>S1</th>
-      <th>S2</th>
-      <th>S3</th>
-      <th>S4</th>
-      <th>S5</th>
-      <th>S6</th>
-      <th>S7</th>
-      <th>S8</th>
-      <th>S9</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
   <% @games.each do |game| %>
-    <tr>
-      <td><%= game.s1 %></td>
-      <td><%= game.s2 %></td>
-      <td><%= game.s3 %></td>
-      <td><%= game.s4 %></td>
-      <td><%= game.s5 %></td>
-      <td><%= game.s6 %></td>
-      <td><%= game.s7 %></td>
-      <td><%= game.s8 %></td>
-      <td><%= game.s9 %></td>
+  <div class = "gameonfeed">
+   <span>Game: </span><span><%= game.id %></span>
+   <% if game.gamestatus.blank? %>
+    <p>Not finished yet</p>
+    <%else%>
+    <%= game.gamestatus %>
+   <%end%>
 
-      <td><%= link_to 'Show', game_url(game) %></td>
-      <td><%= link_to 'Edit', edit_game_url(game) %></td>
-      <td><%= link_to 'Destroy', game_url(game), method: 'delete', data: { confirm: "Do you really want to delete this game?" } %></td>
+      <%= link_to 'Show', game_url(game) %> |
+      <%= link_to 'Delete', game_url(game), method: 'delete', data: { confirm: "Do you really want to delete this game?" } %>
 
-    </tr>
+  </div>
   <% end %>
-  </tbody>
-</table>
+
 
