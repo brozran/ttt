@@ -1,25 +1,25 @@
 <h1>Game #<%= @game.id %></h1>
-<%= @game.move.to_i%>
+
 
 <div class="game">
 
   <%= form_tag game_url(@game), class: "form-inline inputbox", method: 'patch' do %>
     <div class = "spotonboard pull-left">
-      <% if @game.s1.present? %>
+      <% if @game.s1.present? || @game.gamestatus != nil %>
         <%= @game.s1%>
         <%else%>
         <%= text_field_tag :s1  %>
       <%end%>
     </div>
     <div class = "spotonboard pull-left">
-      <% if @game.s2.present? %>
+      <% if @game.s2.present? || @game.gamestatus != nil %>
         <%= @game.s2%>
         <%else%>
         <%= text_field_tag :s2  %>
       <%end%>
     </div>
     <div class = "spotonboard pull-right">
-      <% if @game.s3.present? %>
+      <% if @game.s3.present? || @game.gamestatus != nil %>
         <%= @game.s3%>
         <%else%>
         <%= text_field_tag :s3  %>
@@ -27,21 +27,21 @@
     </div>
 
     <div class = "spotonboard pull-left">
-      <% if @game.s4.present? %>
+      <% if @game.s4.present? || @game.gamestatus != nil %>
         <%= @game.s4 %>
         <%else%>
         <%= text_field_tag :s4  %>
       <%end%>
     </div>
     <div class = "spotonboard pull-left">
-      <% if @game.s5.present? %>
+      <% if @game.s5.present? || @game.gamestatus != nil %>
         <%= @game.s5%>
         <%else%>
         <%= text_field_tag :s5  %>
       <%end%>
     </div>
     <div class = "spotonboard pull-right">
-      <% if @game.s6.present? %>
+      <% if @game.s6.present? || @game.gamestatus != nil %>
         <%= @game.s6%>
         <%else%>
         <%= text_field_tag :s6  %>
@@ -49,21 +49,21 @@
     </div>
 
     <div class = "spotonboard pull-left">
-      <% if @game.s7.present? %>
+      <% if @game.s7.present? || @game.gamestatus != nil %>
         <%= @game.s7%>
         <%else%>
         <%= text_field_tag :s7  %>
       <%end%>
     </div>
     <div class = "spotonboard pull-left">
-      <% if @game.s8.present? %>
+      <% if @game.s8.present? || @game.gamestatus != nil %>
         <%= @game.s8%>
         <%else%>
         <%= text_field_tag :s8  %>
       <%end%>
     </div>
     <div class = "spotonboard pull-right">
-      <% if @game.s9.present? %>
+      <% if @game.s9.present? || @game.gamestatus != nil %>
         <%= @game.s9%>
         <%else%>
         <%= text_field_tag :s9  %>
@@ -79,5 +79,8 @@
 
 
 </div>
-<%= link_to 'Restart', reset_url(@game), method: 'patch' %>
+  <%= link_to 'Restart', reset_url(@game), method: 'patch' %>
+</br>
+
+<h1><%= @game.gamestatus %></h1>
 
