@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130909234122) do
+ActiveRecord::Schema.define(version: 20130912014136) do
 
   create_table "games", force: true do |t|
     t.string  "s1"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20130909234122) do
     t.string  "s8"
     t.string  "s9"
     t.integer "move"
+    t.string  "gamestatus"
   end
 
 end
